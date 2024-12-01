@@ -8,82 +8,97 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Soft gray background */
+            background-color: #f7f7f7; /* Мягкий серый фон */
+            color: #333; /* Темный текст для контраста */
         }
         header {
-            background-color: #0078D7;
-            color: white;
+            background-color: #ffffff; /* Белый фон для шапки */
             padding: 20px;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid #ddd; /* Легкая тень снизу */
         }
         header img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            height: 60px;
+            display: block;
+            margin: 0 auto 10px; /* Центровка логотипа */
+            height: 80px; /* Оптимальная высота */
         }
         header h1 {
             margin: 0;
+            font-size: 24px;
         }
         .container {
             display: flex;
             flex-wrap: wrap;
             padding: 10px;
+            gap: 10px; /* Пространство между блоками */
+            justify-content: center; /* Центровка блоков */
         }
         .tile {
-            background-color: #fff;
-            margin: 10px;
-            flex: 1 1 calc(50% - 20px);
+            background-color: #ffffff; /* Белый фон */
+            border: 1px solid #ddd; /* Легкий контур */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+            border-radius: 8px; /* Скругленные углы */
+            flex: 1 1 calc(45% - 20px); /* Гибкая ширина */
             box-sizing: border-box;
+            max-width: 300px; /* Ограничение ширины */
             text-align: center;
-            border: 1px solid #ccc;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .tile:hover {
-            background-color: #e6e6e6;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px); /* Эффект подъема */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .tile img {
             max-width: 100%;
-            height: auto;
+            border-top-left-radius: 8px; /* Скругление верхних углов изображения */
+            border-top-right-radius: 8px;
         }
         .tile h3 {
-            margin: 10px 0;
+            margin: 15px 0 10px;
         }
         .tile a {
-            display: block;
-            padding: 10px;
+            display: inline-block;
+            padding: 10px 20px;
             background-color: #0078D7;
             color: white;
             text-decoration: none;
-            margin: 10px;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
         .tile a:hover {
             background-color: #005a9e;
         }
         .info {
             padding: 20px;
-            background-color: #fff;
             text-align: center;
+            background-color: #ffffff; /* Белый фон */
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
         }
         .info h2 {
             margin-top: 0;
         }
         footer {
-            background-color: #0078D7;
-            color: white;
+            background-color: #ffffff; /* Белый фон для футера */
+            color: #333;
             text-align: center;
             padding: 10px;
+            border-top: 1px solid #ddd; /* Линия сверху */
         }
         footer a {
-            color: white;
+            color: #0078D7;
             text-decoration: underline;
         }
         @media (max-width: 600px) {
             .tile {
-                flex: 1 1 100%;
+                flex: 1 1 100%; /* Полная ширина для мобильных */
+            }
+            header img {
+                height: 60px; /* Уменьшение размера логотипа */
+            }
+            header h1 {
+                font-size: 20px; /* Меньший текст */
             }
         }
     </style>
@@ -95,7 +110,7 @@
     </header>
     <div class="container">
         <div class="tile">
-            <img src="Speedybee" alt="SpeedyBee F405 V3">
+            <img src="source_to_speedybee_f405v3_image.jpg" alt="SpeedyBee F405 V3">
             <h3>Stack SpeedyBee F405 V3</h3>
             <a href="speedybee_f405v3.html">Подробнее</a>
         </div>
