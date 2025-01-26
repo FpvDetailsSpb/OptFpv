@@ -5,22 +5,23 @@
     <title>Продажа деталей для дронов оптом и в розницу</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* ВСЁ СОДЕРЖИМОЕ СТИЛЕЙ СОХРАНЕНО БЕЗ ИЗМЕНЕНИЙ */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7; /* Мягкий серый фон */
-            color: #333; /* Темный текст для контраста */
+            background-color: #f7f7f7;
+            color: #333;
         }
         header {
-            background-color: #ffffff; /* Белый фон для шапки */
+            background-color: #ffffff;
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #ddd; /* Легкая тень снизу */
+            border-bottom: 1px solid #ddd;
         }
         header img {
             display: block;
-            margin: 0 auto 10px; /* Центровка логотипа */
-            height: 80px; /* Оптимальная высота */
+            margin: 0 auto 10px;
+            height: 80px;
         }
         header h1 {
             margin: 0;
@@ -30,27 +31,27 @@
             display: flex;
             flex-wrap: wrap;
             padding: 10px;
-            gap: 10px; /* Пространство между блоками */
-            justify-content: center; /* Центровка блоков */
+            gap: 10px;
+            justify-content: center;
         }
         .tile {
-            background-color: #ffffff; /* Белый фон */
-            border: 1px solid #ddd; /* Легкий контур */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
-            border-radius: 8px; /* Скругленные углы */
-            flex: 1 1 calc(45% - 20px); /* Гибкая ширина */
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1 1 calc(45% - 20px);
             box-sizing: border-box;
-            max-width: 300px; /* Ограничение ширины */
+            max-width: 300px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .tile:hover {
-            transform: translateY(-5px); /* Эффект подъема */
+            transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .tile img {
             max-width: 100%;
-            border-top-left-radius: 8px; /* Скругление верхних углов изображения */
+            border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
         .tile h3 {
@@ -71,10 +72,10 @@
         .info {
             padding: 20px;
             text-align: center;
-            background-color: #ffffff; /* Белый фон */
+            background-color: #ffffff;
             margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .info h2 {
             margin-top: 0;
@@ -88,11 +89,11 @@
             height: 50px;
         }
         footer {
-            background-color: #ffffff; /* Белый фон для футера */
+            background-color: #ffffff;
             color: #333;
             text-align: center;
             padding: 10px;
-            border-top: 1px solid #ddd; /* Линия сверху */
+            border-top: 1px solid #ddd;
         }
         footer a {
             color: #0078D7;
@@ -103,13 +104,13 @@
         }
         @media (max-width: 600px) {
             .tile {
-                flex: 1 1 100%; /* Полная ширина для мобильных */
+                flex: 1 1 100%;
             }
             header img {
-                height: 60px; /* Уменьшение размера логотипа */
+                height: 60px;
             }
             header h1 {
-                font-size: 20px; /* Меньший текст */
+                font-size: 20px;
             }
         }
     </style>
@@ -120,6 +121,7 @@
         <h1>Продажа деталей для дронов оптом и в розницу</h1>
     </header>
     <div class="container">
+        <!-- Все оригинальные товары -->
         <div class="tile">
             <img src="Speedybee.jpg" alt="SpeedyBee F405 V3">
             <h3>Stack SpeedyBee F405 V3</h3>
@@ -139,6 +141,13 @@
             <img src="source_to_brotherhobby_avenger_2812_image.jpg" alt="BrotherHobby Avenger 2812 900KV">
             <h3>Моторы BrotherHobby Avenger 2812 900KV</h3>
             <a href="brotherhobby_avenger_2812.html">Подробнее</a>
+        </div>
+
+        <!-- НОВЫЙ ТОВАР (добавлен в конец контейнера) -->
+        <div class="tile">
+            <img src="rushfpv_gnss_pro.jpg" alt="Модуль GPS RushFPV GNSS Pro">
+            <h3>Модуль GPS RushFPV GNSS Pro</h3>
+            <a href="rushfpv_gnss_pro.html">Подробнее</a>
         </div>
     </div>
     <div class="info">
