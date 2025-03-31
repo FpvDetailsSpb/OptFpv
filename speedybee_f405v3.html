@@ -2,9 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Стек SpeedyBee F405 V3 BLS 50A 30x30</title>
+    <title>Полётный контроллер SpeedyBee F405 V4 + ESC 55A 3-6S Stack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Общие стили */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -22,6 +23,7 @@
             margin: 0;
             font-size: 24px;
         }
+        /* Контейнер для товара */
         .product-container {
             max-width: 1200px;
             margin: 20px auto;
@@ -67,20 +69,25 @@
         .add-to-cart:hover, .go-home:hover {
             background-color: #005a9e;
         }
-        .features, .specifications {
+        /* Блок характеристик */
+        .specifications {
             margin: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .features ul, .specifications ul {
+        .specifications h3 {
+            margin-top: 0;
+        }
+        .specifications ul {
             list-style: none;
             padding: 0;
         }
-        .features li, .specifications li {
+        .specifications li {
             margin: 10px 0;
         }
+        /* Блок WhatsApp и футер */
         .whatsapp-link {
             text-align: center;
             margin: 20px;
@@ -106,50 +113,36 @@
 </head>
 <body>
     <header>
-        <h1>Стек SpeedyBee F405 V3 BLS 50A 30x30</h1>
+        <h1>Полётный контроллер SpeedyBee F405 V4 + ESC 55A 3-6S Stack</h1>
     </header>
     <div class="product-container">
         <div class="product-image">
-            <img src="Speedybee.jpg" alt="Стек SpeedyBee F405 V3 BLS 50A 30x30">
+            <!-- Изображение товара – не на весь экран, как на странице с ретранслятором -->
+            <img src="speedybee_f405_v4.jpg" alt="Полётный контроллер SpeedyBee F405 V4 + ESC 55A 3-6S Stack">
         </div>
         <div class="product-details">
-            <h2>Характеристики и особенности</h2>
-            <p>Оснащён 6-ю UART-портами, встроенным барометром, индикацией уровня заряда батареи и защитой от скачков напряжения.</p>
-            <p class="price">5750 ₽</p>
+            <h2>Описание</h2>
+            <p>
+                Полётный контроллер SpeedyBee F405 V4 + ESC 55A 3-6S Stack. STM32F405 FC (лучше, чем F411), встроенный 4-уровневый индикатор заряда батареи, слот для карты памяти Blackbox SD на 4 ГБ для журналов полетов, 4 группы светодиодных полосок, в комплекте с разъемом DJI для цифрового квадрокоптера, а также встроенный Bluetooth для беспроводной настройки в приложении SpeedyBee. Не забудьте о мощном 55A 4-в-1 ESC, построенном с алюминиевым радиатором + защитный диод TVS + японские конденсаторы TDK SMT + внешний конденсатор 1000 мкФ с низким ESR, все для прочной сборки и плавного полета.
+                <br>* Разъем DJI Air Unit полностью совместим с DJI O3/RunCam Link/Caddx Vista/DJI Air Unit V1, нет необходимости менять провод.
+            </p>
+            <p class="price">Цена: 6 500 ₽</p>
             <a href="#" class="add-to-cart">Добавить в корзину</a>
             <a href="index.html" class="go-home">На главную</a>
         </div>
     </div>
-    <div class="features">
-        <h3>Особенности</h3>
-        <ul>
-            <li>6-контактный разъём для быстрого подключения DJI Air Unit.</li>
-            <li>Слот для карты памяти MicroSD. Поддерживает до 4 Гб данных.</li>
-            <li>Полётный контроллер имеет 8 выходов для моторов.</li>
-            <li>Есть встроенный барометр.</li>
-            <li>Настройка полётного контроллера и регулятора оборотов по Bluetooth.</li>
-        </ul>
-    </div>
     <div class="specifications">
         <h3>Характеристики</h3>
-        <h4>Полётный контроллер SpeedyBee F405 V3</h4>
         <ul>
-            <li>Микроконтроллер: STM32F405</li>
-            <li>Гироскоп: BMI270</li>
-            <li>Барометр: встроенный</li>
-            <li>Экранное меню (OSD): AT7456E</li>
-            <li>USB интерфейс: Type-C</li>
-            <li>BLE Bluetooth: поддерживается</li>
-            <li>Подключение DJI Air Unit: 6-pin коннектор или пайка</li>
-            <li>Панель управления камерой BetaFlight: есть</li>
-        </ul>
-        <h4>Регулятор оборотов BLS 50A 4-in-1 ESC</h4>
-        <ul>
-            <li>Прошивка: BLHeli_S JH50</li>
-            <li>Непрерывный ток: 50 А × 4</li>
-            <li>Пиковый ток: 55 А (5 секунд)</li>
-            <li>Внешний конденсатор: 1000 мкФ</li>
-            <li>Протокол ESC: Dshot300 / 600</li>
+            <li><strong>Вес:</strong> 34 г</li>
+            <li><strong>Входное напряжение (питание):</strong> 3-6S</li>
+            <li><strong>Выходное напряжение:</strong> 3.3-9.0 В</li>
+            <li><strong>Количество моторов:</strong> 1, 4, 8, 6</li>
+            <li><strong>Пиковый ток:</strong> 70 А х4</li>
+            <li><strong>Производитель:</strong> SpeedyBee</li>
+            <li><strong>Протокол связи в микроконтроллерах и периферии:</strong> Bluetooth, I2C, UART</li>
+            <li><strong>Разъём:</strong> Micro SD, USB-C</li>
+            <li><strong>Ток:</strong> 55 А х4</li>
         </ul>
     </div>
     <div class="whatsapp-link">
