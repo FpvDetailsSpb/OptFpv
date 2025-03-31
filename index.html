@@ -1,202 +1,323 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Продажа деталей для дронов оптом и в розницу</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-        }
-        header {
-            background-color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        header img {
-            display: block;
-            margin: 0 auto 10px;
-            height: 80px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 10px;
-            gap: 10px;
-            justify-content: center;
-        }
-        .tile {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            flex: 1 1 calc(45% - 20px);
-            box-sizing: border-box;
-            max-width: 300px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .tile img {
-            max-width: 100%;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
-        .tile h3 {
-            margin: 15px 0 10px;
-        }
-        .tile a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #0078D7;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .tile a:hover {
-            background-color: #005a9e;
-        }
-        .info {
-            padding: 20px;
-            text-align: center;
-            background-color: #ffffff;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .info h2 {
-            margin-top: 0;
-        }
-        .whatsapp-link {
-            text-align: center;
-            margin: 20px;
-        }
-        .whatsapp-link img {
-            width: 50px;
-            height: 50px;
-        }
-        footer {
-            background-color: #ffffff;
-            color: #333;
-            text-align: center;
-            padding: 10px;
-            border-top: 1px solid #ddd;
-        }
-        footer a {
-            color: #0078D7;
-            text-decoration: underline;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .tile {
-                flex: 1 1 100%;
-            }
-            header img {
-                height: 60px;
-            }
-            header h1 {
-                font-size: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>FPV Details – Продажа деталей для дронов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Сброс отступов и базовые стили */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    /* Шапка (верх) сайта в цвет из вашей картинки */
+    header {
+      background-color: #1E3C72; /* при необходимости замените на точный HEX-код из изображения */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      display: block;
+      margin: 0 auto 10px;
+      height: 80px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    /* Навигация под шапкой */
+    nav {
+      background-color: #1E3C72; 
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    /* Контейнер для центрального контента */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    /* Заголовок секции */
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    /* Сетка товаров в стиле Robotshop */
+    .featured-products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .product-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    /* Блок с изображениями для переключения при hover */
+    .product-image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .product-image img {
+      display: block;
+      width: 100%;
+      transition: opacity 0.5s ease;
+    }
+    .img-first {
+      opacity: 1;
+    }
+    .img-second {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .product-card:hover .img-first {
+      opacity: 0;
+    }
+    .product-card:hover .img-second {
+      opacity: 1;
+    }
+    /* Детали товара */
+    .product-details {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-details h3 {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    .product-details a {
+      display: inline-block;
+      padding: 8px 15px;
+      background: #0078D7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .product-details a:hover {
+      background: #005a9e;
+    }
+    /* Блок info и остальная нижняя часть, взята из вашего исходного кода */
+    .info {
+      padding: 20px;
+      text-align: center;
+      background-color: #ffffff;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .info h2 {
+      margin-top: 0;
+    }
+    .whatsapp-link {
+      text-align: center;
+      margin: 20px;
+    }
+    .whatsapp-link img {
+      width: 50px;
+      height: 50px;
+    }
+    footer {
+      background-color: #ffffff;
+      color: #333;
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+    footer a {
+      color: #0078D7;
+      text-decoration: underline;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      header img {
+        height: 60px;
+      }
+      header h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo1.png" alt="Логотип FPV Details">
-        <h1>Продажа деталей для дронов оптом и в розницу</h1>
-    </header>
-    <div class="container">
-        <!-- Все оригинальные товары -->
-        <div class="tile">
-            <img src="Speedybee.jpg" alt="SpeedyBee F405 V3">
-            <h3>Stack SpeedyBee F405 V3</h3>
-            <a href="speedybee_f405v3.html">Подробнее</a>
-        </div>
-        <div class="tile">
-            <img src="source_to_camera_image.jpg" alt="Siyi ZT6">
-            <h3>Камера Siyi ZT6</h3>
-            <a href="siyi_zt6.html">Подробнее</a>
-        </div>
-        <div class="tile">
-            <img src="source_to_camera1_image.jpg" alt="Caddx Ratel 2">
-            <h3>Камера Caddx Ratel 2</h3>
-            <a href="caddx_ratel_2.html">Подробнее</a>
-        </div>
-        <div class="tile">
-            <img src="source_to_brotherhobby_avenger_2812_image.jpg" alt="BrotherHobby Avenger 2812 900KV">
-            <h3>Моторы BrotherHobby Avenger 2812 900KV</h3>
-            <a href="brotherhobby_avenger_2812.html">Подробнее</a>
-        </div>
+  <header>
+    <img src="logo1.png" alt="Логотип FPV Details">
+    <h1>FPV Details</h1>
+    <p>Продажа деталей для дронов оптом и в розницу</p>
+  </header>
+  <nav>
+    <a href="#">Главная</a>
+    <a href="#">О нас</a>
+    <a href="#">Каталог</a>
+    <a href="#">Контакты</a>
+  </nav>
 
-        <!-- НОВЫЙ ТОВАР (добавлен в конец контейнера) -->
-        <div class="tile">
-            <img src="rushfpv_gnss_pro.jpg" alt="Модуль GPS RushFPV GNSS Pro">
-            <h3>Модуль GPS RushFPV GNSS Pro</h3>
-            <a href="rushfpv_gnss_pro.html">Подробнее</a>
+  <div class="container">
+    <h2>Featured Products</h2>
+    <div class="featured-products">
+      <!-- Продукт 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="Speedybee.jpg" alt="Stack SpeedyBee F405 V3">
+          <img class="img-second" src="Speedybee_hover.jpg" alt="Stack SpeedyBee F405 V3 - вид 2">
         </div>
-<!-- Антенна патч -->
-<div class="tile">
-    <img src="antena_patch_rushfpv.jpg" alt="Антенна патч RushFPV 3.3G 15 DBI">
-    <h3>Антенна патч RushFPV 3.3G 15 DBI</h3>
-    <a href="antenna_rushfpv_15dbi.html">Подробнее</a>
-</div>
-
-<!-- Оптоволокно -->
-<div class="tile">
-    <img src="fiber_optic_coil.jpg" alt="FPV оптоволокно катушка 10 км">
-    <h3>FPV оптоволокно катушка 10 км</h3>
-    <a href="fiber_optic_10km.html">Подробнее</a>
-</div>
-
-<!-- Очки Walksnail -->
-<div class="tile">
-    <img src="walksnail_goggles_x.jpg" alt="Walksnail Avatar HD Goggles X">
-    <h3>Walksnail Avatar HD Goggles X</h3>
-    <a href="walksnail_goggles_x.html">Подробнее</a>
-</div>
-
-<!-- VTX с камерой -->
-<div class="tile">
-    <img src="avatar_gt_kit.jpg" alt="Walksnail Аватар GT KIT VTX with Moonlight Camera">
-    <h3>Walksnail Аватар GT KIT VTX with Moonlight Camera</h3>
-    <a href="avatar_gt_kit.html">Подробнее</a>
-</div>
-
-<!-- Ретранслятор -->
-<div class="tile">
-    <img src="avatar_repeater.jpg" alt="Walksnail Avatar Repeater Ретранслятор">
-    <h3>Walksnail Avatar Repeater Ретранслятор</h3>
-    <a href="avatar_repeater.html">Подробнее</a>
-</div>
+        <div class="product-details">
+          <h3>Stack SpeedyBee F405 V3</h3>
+          <a href="speedybee_f405v3.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="source_to_camera_image.jpg" alt="Камера Siyi ZT6">
+          <img class="img-second" src="source_to_camera_image_hover.jpg" alt="Камера Siyi ZT6 - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Камера Siyi ZT6</h3>
+          <a href="siyi_zt6.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="source_to_camera1_image.jpg" alt="Камера Caddx Ratel 2">
+          <img class="img-second" src="source_to_camera1_image_hover.jpg" alt="Камера Caddx Ratel 2 - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Камера Caddx Ratel 2</h3>
+          <a href="caddx_ratel_2.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="source_to_brotherhobby_avenger_2812_image.jpg" alt="Моторы BrotherHobby Avenger 2812 900KV">
+          <img class="img-second" src="source_to_brotherhobby_avenger_2812_image_hover.jpg" alt="Моторы BrotherHobby Avenger 2812 900KV - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Моторы BrotherHobby Avenger 2812 900KV</h3>
+          <a href="brotherhobby_avenger_2812.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 5 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="rushfpv_gnss_pro.jpg" alt="Модуль GPS RushFPV GNSS Pro">
+          <img class="img-second" src="rushfpv_gnss_pro_hover.jpg" alt="Модуль GPS RushFPV GNSS Pro - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Модуль GPS RushFPV GNSS Pro</h3>
+          <a href="rushfpv_gnss_pro.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 6 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="antena_patch_rushfpv.jpg" alt="Антенна патч RushFPV 3.3G 15 DBI">
+          <img class="img-second" src="antena_patch_rushfpv_hover.jpg" alt="Антенна патч RushFPV 3.3G 15 DBI - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Антенна патч RushFPV 3.3G 15 DBI</h3>
+          <a href="antenna_rushfpv_15dbi.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 7 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="fiber_optic_coil.jpg" alt="FPV оптоволокно катушка 10 км">
+          <img class="img-second" src="fiber_optic_coil_hover.jpg" alt="FPV оптоволокно катушка 10 км - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>FPV оптоволокно катушка 10 км</h3>
+          <a href="fiber_optic_10km.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 8 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="walksnail_goggles_x.jpg" alt="Walksnail Avatar HD Goggles X">
+          <img class="img-second" src="walksnail_goggles_x_hover.jpg" alt="Walksnail Avatar HD Goggles X - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Walksnail Avatar HD Goggles X</h3>
+          <a href="walksnail_goggles_x.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 9 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="avatar_gt_kit.jpg" alt="Walksnail Аватар GT KIT VTX with Moonlight Camera">
+          <img class="img-second" src="avatar_gt_kit_hover.jpg" alt="Walksnail Аватар GT KIT VTX with Moonlight Camera - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Walksnail Аватар GT KIT VTX with Moonlight Camera</h3>
+          <a href="avatar_gt_kit.html">Подробнее</a>
+        </div>
+      </div>
+      <!-- Продукт 10 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img class="img-first" src="avatar_repeater.jpg" alt="Walksnail Avatar Repeater Ретранслятор">
+          <img class="img-second" src="avatar_repeater_hover.jpg" alt="Walksnail Avatar Repeater Ретранслятор - вид 2">
+        </div>
+        <div class="product-details">
+          <h3>Walksnail Avatar Repeater Ретранслятор</h3>
+          <a href="avatar_repeater.html">Подробнее</a>
+        </div>
+      </div>
     </div>
-    <div class="info">
-        <h2>Большое количество деталей в наличии в СПб, быстрая отправка. </h2>
-        <p>Почему стоит выбрать нас?</p>
-        <p>Мы предлагаем широкий ассортимент деталей для дронов по оптовым и розничным ценам. Качество гарантировано, а сервис на высшем уровне. Доступна оплата для юридических лиц.</p>
-    </div>
-    <div class="whatsapp-link">
-        <a href="https://wa.me/79939660914" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Связаться через WhatsApp">
-        </a>
-        <p>Связаться через WhatsApp: +79939660914</p>
-    </div>
-    <footer>
-        <p>Присоединяйтесь к нашему Telegram каналу: <a href="https://t.me/FpvDetails">t.me/FpvDetails</a></p>
-    </footer>
+  </div>
+
+  <!-- Инфоблок, WhatsApp и футер — как в исходном коде -->
+  <div class="info">
+    <h2>Большое количество деталей в наличии в СПб, быстрая отправка.</h2>
+    <p>Почему стоит выбрать нас?</p>
+    <p>Мы предлагаем широкий ассортимент деталей для дронов по оптовым и розничным ценам. Качество гарантировано, а сервис на высшем уровне. Доступна оплата для юридических лиц.</p>
+  </div>
+
+  <div class="whatsapp-link">
+    <a href="https://wa.me/7xxxxx" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Связаться через WhatsApp">
+    </a>
+    <p>Связаться через WhatsApp: +799xxxx</p>
+  </div>
+
+  <footer>
+    <p>Присоединяйтесь к нашему Telegram каналу: <a href="https://t.me/xxxxxx">t.me/xxxxx</a></p>
+  </footer>
 </body>
 </html>
-</html>
+
